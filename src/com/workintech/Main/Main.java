@@ -2,6 +2,7 @@ package com.workintech.Main;
 
 import java.sql.SQLOutput;
 import java.util.LinkedList;
+import java.util.Locale;
 import java.util.Queue;
 import java.util.Stack;
 
@@ -35,7 +36,7 @@ public class Main {
 
 
     public static boolean checkForPalindrome(String text) {
-        String processedText = text.toLowerCase().replaceAll("[^a-zA-Z0-9]", ""); // Sadece harf ve rakamları al, büyük harfleri küçük harfe çevir
+        String processedText = text.toLowerCase(Locale.ENGLISH).replaceAll("[^a-zA-Z0-9]", ""); // Sadece harf ve rakamları al, büyük harfleri küçük harfe çevir
 
         Stack<Character> stack = new Stack<>();
         int halfLength = processedText.length() / 2;
@@ -55,11 +56,12 @@ public class Main {
             }
         }
 
+
         return stack.isEmpty();
     }
 
     public static boolean checkForPalindrome2(String text) {
-        String processedText = text.toLowerCase().replaceAll("[^a-zA-Z0-9]", ""); // Sadece harf ve rakamları al, büyük harfleri küçük harfe çevir
+        String processedText = text.toLowerCase(Locale.ENGLISH).replaceAll("[^a-zA-Z0-9]", ""); // Sadece harf ve rakamları al, büyük harfleri küçük harfe çevir
 
         Stack<Character> stack = new Stack<>();
         Queue<Character> queue = new LinkedList<>();
